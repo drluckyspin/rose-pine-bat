@@ -74,6 +74,10 @@ Syntax highlighting theme for [**bat**](https://github.com/sharkdp/bat) (a `cat`
 
 ![Rosé Pine Moon syntax highlighting in bat](screenshots/rose-pine-moon.png)
 
+![Rosé Pine Moon syntax highlighting in bat](screenshots/rose-pine-moon2.png)
+
+
+
 ## Thanks to
 
 - [sharkdp/bat](https://github.com/sharkdp/bat) for bat
