@@ -14,8 +14,8 @@
 #  │   Install the Rosé Pine Moon syntax theme and set it as the default for bat.                                      │
 #  │                                                                                                                   │
 #  │   Usage:                                                                                                          │
-#  │     ./install.bash                Install theme + default                                                         │
-#  │     ./install.bash --install-bat  Also install bat via brew                                                       │
+#  │     ./install.bash                Install theme + default (prompts for bat)                                         │
+#  │     ./install.bash --install-bat  Install bat via brew without prompting                                          │
 #  │     ./install.bash --help         Show full help                                                                  │
 #  │                                                                                                                   │
 #  ╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
@@ -34,10 +34,10 @@ Usage: ./install.bash [options]
 Install the Rosé Pine Moon theme for bat and set it as the default.
 
 Options:
-  --install-bat   Install bat via Homebrew if it is missing (macOS/Linux with brew)
+  --install-bat   Install bat via Homebrew without prompting (non-interactive)
   -h, --help      Show this help message
 
-Without options, the script expects bat to already be installed.
+If bat is missing, the script prompts to install it via Homebrew when possible.
 EOF
 }
 
@@ -66,19 +66,44 @@ while [[ $# -gt 0 ]]; do
 	esac
 done
 
+install_bat_via_brew() {
+	log "installing bat via Homebrew"
+	brew install bat
+}
+
+prompt_install_bat() {
+	if ! command -v brew >/dev/null 2>&1; then
+		die "bat is not installed and Homebrew was not found. Install bat from https://github.com/sharkdp/bat"
+	fi
+
+	if [[ "$INSTALL_BAT" == true ]]; then
+		install_bat_via_brew
+		return 0
+	fi
+
+	if [[ ! -t 0 ]]; then
+		die "bat is not installed. Install it from https://github.com/sharkdp/bat or re-run with --install-bat (requires Homebrew)."
+	fi
+
+	printf 'bat is not installed. Install it via Homebrew? [y/N] ' >&2
+	read -r reply
+	case "$reply" in
+	[yY] | [yY][eE][sS])
+		install_bat_via_brew
+		;;
+	*)
+		die "bat is required. Install it from https://github.com/sharkdp/bat"
+		;;
+	esac
+}
+
 ensure_bat() {
 	if command -v bat >/dev/null 2>&1; then
 		log "found $(bat --version | head -n1)"
 		return 0
 	fi
 
-	if [[ "$INSTALL_BAT" == true ]] && command -v brew >/dev/null 2>&1; then
-		log "installing bat via Homebrew"
-		brew install bat
-		return 0
-	fi
-
-	die "bat is not installed. Install it from https://github.com/sharkdp/bat or re-run with --install-bat (requires Homebrew)."
+	prompt_install_bat
 }
 
 install_theme() {
