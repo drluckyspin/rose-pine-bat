@@ -14,7 +14,7 @@
 #  │   Install the Rosé Pine Moon syntax theme and set it as the default for bat.                                      │
 #  │                                                                                                                   │
 #  │   Usage:                                                                                                          │
-#  │     ./install.bash                Install theme + default (prompts for bat)                                         │
+#  │     ./install.bash                Install theme + default (prompts to install bat if missing)                     │
 #  │     ./install.bash --install-bat  Install bat via brew without prompting                                          │
 #  │     ./install.bash --help         Show full help                                                                  │
 #  │                                                                                                                   │
@@ -123,7 +123,7 @@ install_theme() {
 	bat cache --build
 
 	log "checking that bat registered the theme"
-	if bat --list-themes | grep -qi rose; then
+	if bat --list-themes | grep -Fxq -- "$THEME_ID"; then
 		printf '    %s is available\n' "$THEME_ID"
 	else
 		die "theme was copied but $THEME_ID was not found in 'bat --list-themes'"
@@ -132,7 +132,7 @@ install_theme() {
 
 set_default_theme() {
 	local config_file="$bat_config_dir/config"
-	local theme_line='--theme="Rose-Pine-Moon"'
+	local theme_line="--theme=\"$THEME_ID\""
 
 	if [[ -f "$config_file" ]] && grep -Fq -- "$theme_line" "$config_file"; then
 		log "default theme already set in $config_file"
