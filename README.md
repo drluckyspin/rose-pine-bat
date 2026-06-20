@@ -13,7 +13,29 @@
 
 Syntax highlighting theme for [**bat**](https://github.com/sharkdp/bat) (a `cat` clone with wings). Colors follow **Rosé Pine Moon**, with a base background of `#191724` so it pairs nicely with the main Rosé Pine palette and dark terminals.
 
-## Usage
+## Installation
+
+Clone this repository, then run the installer. It copies the theme into bat’s themes directory, rebuilds the cache, and sets **Rose-Pine-Moon** as the default.
+
+```bash
+git clone https://github.com/drluckyspin/rose-pine-bat.git
+cd rose-pine-bat
+./install.bash
+```
+
+If [bat](https://github.com/sharkdp/bat) is not installed yet, pass `--install-bat` to install it via Homebrew (macOS or Linux with brew):
+
+```bash
+./install.bash --install-bat
+```
+
+Then try it:
+
+```bash
+bat README.md
+```
+
+### Manual Installation
 
 1. Install [bat](https://github.com/sharkdp/bat) (for example: `brew install bat` on macOS).
 
