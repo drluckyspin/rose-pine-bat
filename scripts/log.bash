@@ -36,13 +36,14 @@ VERBOSE=false
 # -----------------------------------------------------------------------------------------------------------
 # Rosé Pine Moon palette (themes/Rose-Pine-Moon.tmTheme)
 # -----------------------------------------------------------------------------------------------------------
-RP_TEXT='\033[38;2;224;222;244m'    # #e0def4 foreground
+RP_TEXT='\033[38;2;224;222;244m'   # #e0def4 foreground
 RP_MUTED='\033[38;2;110;106;134m'  # #6e6a86 muted / comment
 RP_INFO='\033[38;2;62;143;176m'    # #3e8fb0 keyword
 RP_FOAM='\033[38;2;156;207;216m'   # #9ccfd8 foam
 RP_LOVE='\033[38;2;235;111;146m'   # #eb6f92 love / error
 RP_GOLD='\033[38;2;246;193;119m'   # #f6c177 gold / warning
 RP_IRIS='\033[38;2;196;167;231m'   # #c4a7e7 iris
+WHITE='\033[38;2;255;255;255m'     # #ffffff white
 RESET='\033[0m'
 DIM='\033[2m'
 
@@ -161,6 +162,7 @@ log_banner() {
     ${RP_MUTED}                                         a ${RP_LOVE}Rosé Pine${RP_MUTED} theme for ${RP_FOAM}Bat${RESET}
     "
 }
+
 
 # -----------------------------------------------------------------------------------------------------------
 # Example usage
