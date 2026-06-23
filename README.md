@@ -23,9 +23,12 @@ Syntax highlighting themes for [**bat**](https://github.com/sharkdp/bat) (a `cat
 
 bat uses the `.tmTheme` file name (without extension) as the theme id, so these install as `Rose-Pine-Moon`, `Rose-Pine`, and `Rose-Pine-Dawn`.
 
-<img width="425" height="500" alt="image" src="https://github.com/user-attachments/assets/ca830eb4-c366-477c-af37-50eb010bf37c" />
-<img width="425" height="500" alt="image" src="https://github.com/user-attachments/assets/26caf726-b6a8-4d30-8de9-3a5ce520ba21" />
-
+<table>
+  <tr>
+    <td width="50%"><img width="100%" alt="Rosé Pine theme comparison — palette swatches" src="https://github.com/user-attachments/assets/ca830eb4-c366-477c-af37-50eb010bf37c" /></td>
+    <td width="50%"><img width="100%" alt="Rosé Pine theme comparison — live bat render" src="https://github.com/user-attachments/assets/26caf726-b6a8-4d30-8de9-3a5ce520ba21" /></td>
+  </tr>
+</table>
 
 ## Installation
 
