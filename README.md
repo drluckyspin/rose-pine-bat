@@ -40,7 +40,12 @@ cd rose-pine-bat
 ./install.bash
 ```
 
-Run interactively, you get a checkbox menu to choose theme(s) — `↑/↓` move, `space` toggle, `a` all, `n` none, `enter` confirm — followed by a prompt to pick the default theme. Then try it:
+Run interactively, you get a checkbox menu to choose theme(s) — `↑/↓` move, `space` toggle, `a` all, `n` none, `enter` confirm — followed by a prompt to pick the default theme. 
+
+<img width="500" height="450" alt="image" src="https://github.com/user-attachments/assets/f9ca9743-4b82-46a4-9dba-0cf1327e3c24" />
+
+
+Then try it:
 
 ```bash
 bat README.md
