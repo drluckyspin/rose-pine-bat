@@ -11,7 +11,7 @@
     </a>
 </p>
 
-Syntax highlighting themes for [**bat**](https://github.com/sharkdp/bat) (a `cat` clone with wings), following the [Rosé Pine](https://rosepinetheme.com/) palette. Every variant uses a base background of `#191724` so it pairs nicely with dark terminals.
+Syntax highlighting themes for [**bat**](https://github.com/sharkdp/bat) (a `cat` clone with wings), following the [Rosé Pine](https://rosepinetheme.com/) palette. The dark variants (`Rose-Pine` and `Rose-Pine-Moon`) use a base background of `#191724`; the light `Rose-Pine-Dawn` variant uses `#faf4ed`.
 
 ## Variants
 
@@ -77,7 +77,7 @@ If you'd rather not use the installer (see [Adding new themes](https://github.co
 
    ```bash
    mkdir -p "$(bat --config-dir)/themes"
-   cp themes/Rose-Pine-Moon.tmTheme "$(bat --config-dir)/themes/"
+   cp themes/*.tmTheme "$(bat --config-dir)/themes/"
    ```
 
 3. Rebuild bat's cached themes:

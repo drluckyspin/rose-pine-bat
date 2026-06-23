@@ -4,7 +4,7 @@
 # Script Name: log.bash
 # Version: 1.9
 #
-# Project: Rose Pin Bat
+# Project: Rose Pine Bat
 #
 # Description: A collection of logging utility functions for bash scripts that
 #              provide colored and formatted console output using the Rosé Pine
@@ -23,7 +23,7 @@
 #   log_separator      : Print a separator line across terminal width
 #   log_centered       : Print centered text
 #   log_verbose        : Log message only if VERBOSE environment variable is true
-#   log_banner         : Display Rose Pin Bat ASCII art banner
+#   log_banner         : Display Rose Pine Bat ASCII art banner
 # -----------------------------------------------------------------------------------------------------------
 # Usage Example: source scripts/log.bash
 # -----------------------------------------------------------------------------------------------------------
@@ -31,7 +31,7 @@
 # -----------------------------------------------------------------------------------------------------------
 # Global variables
 # -----------------------------------------------------------------------------------------------------------
-VERBOSE=false
+VERBOSE=${VERBOSE:-false}
 
 # -----------------------------------------------------------------------------------------------------------
 # Rosé Pine Moon palette (themes/Rose-Pine-Moon.tmTheme)
@@ -54,7 +54,7 @@ DIM='\033[2m'
 # -----------------------------------------------------------------------------------------------------------
 get_terminal_width() {
     local width
-    width=$(tput cols)
+    width=$(tput cols 2>/dev/null) || width=80
     if [ "$width" -gt 120 ]; then
         width=120
     fi
@@ -148,7 +148,7 @@ log_verbose() {
 
 # -----------------------------------------------------------------------------------------------------------
 # Function: log_banner
-# Description: Show the Rose Pin Bat banner.
+# Description: Show the Rose Pine Bat banner.
 # -----------------------------------------------------------------------------------------------------------
 log_banner() {
 

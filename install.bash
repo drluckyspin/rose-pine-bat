@@ -353,7 +353,7 @@ install_selected_themes() {
 
 	listed="$(bat --list-themes)"
 	for id in "${SELECTED_IDS[@]}"; do
-		if printf '%s\n' "$listed" | grep -Fq -- "$id"; then
+		if printf '%s\n' "$listed" | grep -Fxq -- "$id"; then
 			log_indent log_success "$id"
 		else
 			die "theme $id was copied but not found in 'bat --list-themes'"

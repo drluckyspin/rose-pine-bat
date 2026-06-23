@@ -19,7 +19,7 @@ reset=$'\033[0m'
 
 swatch() {
 	# swatch "r;g;b" "#hex" "label"
-	printf '   \033[48;2;%sm        \033[0m  \033[38;2;%sm%-8s\033[0m  %s\n' "$1" "$1" "$2" "$3"
+	printf '   \033[48;2;%sm        %s  \033[38;2;%sm%-8s%s  %s\n' "$1" "$reset" "$1" "$2" "$reset" "$3"
 }
 
 heading() {
