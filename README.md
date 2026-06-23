@@ -141,3 +141,7 @@ If you'd rather not use the installer (see [Adding new themes](https://github.co
 ## Contributing
 
 Issues and pull requests are welcome. For palette tweaks, prefer staying aligned with [Rosé Pine](https://rosepinetheme.com/) unless you are intentionally documenting a fork variant.
+
+<p align="center">
+	<img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/>
+</p>
